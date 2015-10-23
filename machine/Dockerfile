@@ -1,4 +1,4 @@
-# Adapted from r-base on https://github.com/rocker-org/rocker
+# See https://github.com/dougmet/dockerR r-base
 
 FROM doug/r-base:3.1.2
 
