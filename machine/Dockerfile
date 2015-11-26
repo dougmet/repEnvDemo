@@ -1,10 +1,16 @@
 # See https://github.com/dougmet/dockerR r-base
 
-FROM doug/r-base:3.1.2
+FROM dougmet/r-base:3.1.2
 
 ## Who made this
 MAINTAINER "Doug Ashton" dashton@mango-solutions.com
 
-ENV R_BASE_VERSION 3.1.2
-ENV R_CRAN_DATE 2014-11-15
+# Install the gsl system dependencies
+RUN apt-get -y install libgsl0ldbl=1.16+dfsg-1ubuntu1 libgsl0-dev=1.16+dfsg-1ubuntu1
 
+# Install R package manifest
+COPY loadPackages.R /tmp/
+COPY packages.rman /tmp/
+RUN Rscript /tmp/loadPackages.R
+
+CMD ["R"]
