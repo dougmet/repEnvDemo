@@ -1,3 +1,4 @@
 # Saving the manifest
-libMan <- switchr::libManifest(record_versions = TRUE)
-switchr::publishManifest(libMan, dest="machine/packages.rman")
+library(switchr)
+libMan <- libManifest(record_versions = TRUE)
+publishManifest(libMan, dest="machine/packages.rman")
