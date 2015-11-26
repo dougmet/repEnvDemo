@@ -1,0 +1,22 @@
+# R manifest
+# Manifest type: session
+# Dependency repositories: 5
+# repo: http://mran.revolutionanalytics.com/snapshot/2015-03-01
+# repo: http://bioconductor.org/packages/2.14/bioc
+# repo: http://bioconductor.org/packages/2.14/data/annotation
+# repo: http://bioconductor.org/packages/2.14/data/experiment
+# repo: http://bioconductor.org/packages/2.14/extra
+"name","url","type","branch","subdir","extra","version"
+"ADGofTest","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.3"
+"copula","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.999-12"
+"gsl","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"1.9-10"
+"lattice","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.20-30"
+"Matrix","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"1.1-5"
+"mvtnorm","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"1.0-2"
+"pspline","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"1.0-16"
+"quantmod","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.4-3"
+"stabledist","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.6-6"
+"switchr","http://github.com/gmbecker/switchr","github","master",".",NA,"0.9.18"
+"TTR","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.22-0"
+"xts","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"0.9-7"
+"zoo","http://mran.revolutionanalytics.com/snapshot/2015-03-01/src/contrib","repository","trunk",".",NA,"1.7-11"
