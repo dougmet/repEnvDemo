@@ -1,3 +1,5 @@
+library(zoo)
+library(xts)
 library(copula)
 
 # Data Wrangle ------------------------------------------------------------
