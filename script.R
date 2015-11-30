@@ -2,9 +2,6 @@ library(zoo)
 library(xts)
 library(copula)
 
-# Set the path
-setwd("/home/docker/host/")
-
 # Data Wrangle ------------------------------------------------------------
 
 # Retrieve the processed daily data from csv
