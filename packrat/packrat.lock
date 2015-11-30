@@ -1,0 +1,43 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.6.1
+RVersion: 3.2.2
+Repos: BioCsoft=http://bioconductor.org/packages/3.1/bioc,
+    BioCann=http://bioconductor.org/packages/3.1/data/annotation,
+    BioCexp=http://bioconductor.org/packages/3.1/data/experiment,
+    BioCextra=http://bioconductor.org/packages/3.1/extra,
+    CRAN=http://www.stats.bris.ac.uk/R/,
+    CRANextra=http://www.stats.ox.ac.uk/pub/RWin
+
+Package: TTR
+Source: CRAN
+Version: 0.23-0
+Hash: 353f2126778fd3da89cd698ebeea5d21
+Requires: xts, zoo
+
+Package: lattice
+Source: CRAN
+Version: 0.20-33
+Hash: d7158cf4e63e8c12cb227738076b37d8
+
+Package: packrat
+Source: CRAN
+Version: 0.4.6-1
+Hash: 29eacc43b096c5b1a82c8d54a49b030b
+
+Package: quantmod
+Source: CRAN
+Version: 0.4-5
+Hash: 1c585e9754a71da8751a49573689f1b8
+Requires: TTR, xts, zoo
+
+Package: xts
+Source: CRAN
+Version: 0.9-7
+Hash: fb3f81d7a2fa2323879b6b49722ddc5e
+Requires: zoo
+
+Package: zoo
+Source: CRAN
+Version: 1.7-12
+Hash: 8ce4a89536cba4fa6023190959de5658
+Requires: lattice
