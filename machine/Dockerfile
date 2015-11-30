@@ -10,7 +10,7 @@ RUN apt-get -y install libgsl0ldbl=1.16+dfsg-1ubuntu1 libgsl0-dev=1.16+dfsg-1ubu
 
 # Install R package manifest
 COPY loadPackages.R /tmp/
-COPY packages.rman /tmp/
+COPY packages.csv /tmp/
 RUN Rscript /tmp/loadPackages.R
 
 CMD ["R"]
