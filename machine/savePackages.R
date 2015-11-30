@@ -1,4 +1,3 @@
 # Saving the manifest
-library(switchr)
-libMan <- libManifest(record_versions = TRUE)
-publishManifest(libMan, dest="machine/packages.rman")
+library(pkgsnap)
+snap("~/host/packages.csv")
