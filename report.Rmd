@@ -1,7 +1,7 @@
 ---
 title: "Market Correlation"
 author: "Doug Ashton"
-date: "10/6/2016"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
