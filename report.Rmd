@@ -18,15 +18,29 @@ repData <- data.frame(Git.Commit = gitCommit, Git.Branch = gitBranch,
 knitr::kable(repData, format = "markdown")
 ```
 
+It is nice to layout all dependencies at the top.
+
 ```{r, loadPackages, message = FALSE, error = FALSE, warning = FALSE}
 library(zoo)
 library(xts)
 library(copula)
+library(digest)
+library(knitr)
 ```
 
 ## Preparation
 
 ### Aquire the Data
+
+md5 sums are quick checks that the data is what you expected. With modern SSDs you can very quickly check even large files. This can be particularly useful when the data is too large to store in version control.
+
+```{r}
+# md5 sum of input data
+# should be 908b88c1a7e2f7d3ef088076d1ef23f6
+digest("data/allClose.csv", algo = "md5", file = TRUE)
+```
+
+Now load it in.
 
 ```{r}
 # Retrieve the processed daily data from csv
