@@ -1,3 +1,7 @@
 .Rproj.user
 .Rhistory
 .RData
+results/correlation.csv
+results/*.pdf
+report.html
+.DS_Store
