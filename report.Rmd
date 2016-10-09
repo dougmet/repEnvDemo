@@ -1,0 +1,88 @@
+---
+title: "Market Correlation"
+author: "Doug Ashton"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+## Reproduce this document
+
+```{r, reproducible}
+seed <- 909
+gitCommit <- system2("git", c("rev-parse", "HEAD"), stdout = TRUE)
+gitBranch <- system2("git", c("rev-parse", "--abbrev-ref", "HEAD"), stdout = TRUE)
+set.seed(seed)
+repData <- data.frame(Git.Commit = gitCommit, Git.Branch = gitBranch, 
+                      Random.Seed = seed, R.Version = R.version$version.string,
+                      stringsAsFactors = FALSE)
+knitr::kable(repData, format = "markdown")
+```
+
+It is nice to layout all dependencies at the top.
+
+```{r, loadPackages, message = FALSE, error = FALSE, warning = FALSE}
+library(zoo)
+library(xts)
+library(copula)
+library(digest)
+library(knitr)
+```
+
+## Preparation
+
+### Aquire the Data
+
+md5 sums are quick checks that the data is what you expected. With modern SSDs you can very quickly check even large files. This can be particularly useful when the data is too large to store in version control.
+
+```{r}
+# md5 sum of input data
+# should be 908b88c1a7e2f7d3ef088076d1ef23f6
+digest("data/allClose.csv", algo = "md5", file = TRUE)
+```
+
+Now load it in.
+
+```{r}
+# Retrieve the processed daily data from csv
+allClose <- read.zoo("data/allClose.csv",
+                     format="%Y-%m-%d",header=TRUE)
+```
+
+### Transform
+
+As is common with financial time series we want the log daily differences.
+
+```{r}
+# Get log daily returns
+allLog <- diff(log(allClose))
+```
+
+By summing these over weeks we get the weekly log differences.
+
+```{r}
+# Sum to log weekly returns
+allLogWk <- apply.weekly(allLog, colSums)
+```
+
+## Visualise
+
+```{r}
+# Plot of the time series -------------------------------------------------
+plot(allLogWk, main="Weekly Log Returns")
+```
+
+### Copulas
+
+```{r}
+# Make a plot of empirical copulas ----------------------------------------
+pairs(pobs(allLogWk), main="Empirical Copulas")
+```
+
+### Correlations
+
+```{r}
+# Correlation matrix ------------------------------------------------------
+corMat <- cor(allLogWk, use="pairwise.complete.obs")
+knitr::kable(corMat, format = "markdown")
+```
+
